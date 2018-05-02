@@ -33,8 +33,17 @@ public class Circle {
 	public static void main(String[] args) {
 		
 		Circle pizza = new Circle(10, "자바피자");
-		double area = pizza.getArea();
-		System.out.println(pizza.name + "의 면적은 " + area);
+		double pizza_area = pizza.getArea();
+		System.out.println(pizza.name + "의 면적은 " + pizza_area);
+/*		
+		Circle donut = new Circle(); // 매개변수 없는 생성자 호출
+		donut.radius = 2;
+		donut.name = "자바도넛";
+		
+		double donut_area = donut.getArea();
+		System.out.println(donut.name + "의 면적은 " + donut_area);
+		System.out.println(pizza.name + "의 면적은 " + pizza_area);	
+*/
 	}
 
 }
