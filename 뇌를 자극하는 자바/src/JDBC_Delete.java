@@ -4,7 +4,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-class JDBC_Insert {
+class JDBC_Delete {
     public static void main(String args[]) {
     	
     	// 1단계: DB 연결을 위한 커넥션 인터페이스 
@@ -23,14 +23,20 @@ class JDBC_Insert {
             
             //  DB SQL 작업
             stmt = conn.createStatement();
-            String sql = "INSERT INTO person ( jumincd, pname, gender, age)" + 
-            		"values('7706301869653'	,	'을지문덕3'	,	'm',  42	);";
+            String sql = "delete from person where pname = '" +  args[0] + "'" ;
+                       // delete from person where pname = '홍길동';
             int chageRecord = stmt.executeUpdate(sql);
-                        
+            
+            
             
             // 4단계: DB연결을 종료한다.
             conn.close();
-            System.out.println(chageRecord + "건이 입력(추가) 되었습니다.");
+            
+            if(chageRecord > 0)
+            	System.out.println(chageRecord + "건이 삭제 되었습니다.");
+            else
+            	System.out.println("삭제된 데이터는 없습니다.");
+            
         }
         catch (ClassNotFoundException cnfe) {
             System.out.println("해당 클래스를 찾을 수 없습니다." + 
