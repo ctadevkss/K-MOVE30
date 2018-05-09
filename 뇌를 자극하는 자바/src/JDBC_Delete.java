@@ -32,8 +32,8 @@ class JDBC_Delete {
             // 4단계: DB연결을 종료한다.
             conn.close();
             
-            if(chageRecord > 0)
-            	System.out.println(chageRecord + "건이 삭제 되었습니다.");
+            if(changeRecord > 0)
+            	System.out.println(changeRecord + "건이 삭제 되었습니다.");
             else
             	System.out.println("삭제된 데이터는 없습니다.");
             
