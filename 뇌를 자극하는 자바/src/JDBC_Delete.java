@@ -25,7 +25,7 @@ class JDBC_Delete {
             stmt = conn.createStatement();
             String sql = "delete from person where pname = '" +  args[0] + "'" ;
                        // delete from person where pname = 'ȫ�浿';
-            int chageRecord = stmt.executeUpdate(sql);
+            int changeRecord = stmt.executeUpdate(sql);
             
             
             
