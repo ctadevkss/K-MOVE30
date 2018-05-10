@@ -1,0 +1,8 @@
+JDBC 에러
+
+1. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'jumincd, pname,	gender, age from person' at line 1
+   원인: SQL 문법오류
+   
+   
+   
+   
