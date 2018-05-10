@@ -49,11 +49,12 @@ class Person {
 class JDBC_Person {
 	
     public static void main(String args[]) {
+    	
 
     	Person[] persons;
     	
     	
-    	persons = new Person[2]; //  ¹è¿­°´Ã¼ 
+    	persons = new Person[3]; //  ¹è¿­°´Ã¼ 
   
     	System.out.println("persons:" + persons);
     	

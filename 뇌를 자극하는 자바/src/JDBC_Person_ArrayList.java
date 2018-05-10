@@ -82,8 +82,7 @@ class JDBC_Person_ArrayList {
             System.out.println("주민번호         이름      성별    나이");
             
             while(rs.next()) {
-            	//Person person;
-            	///person = new Person();
+
             	Person person = new Person();
             	
             	person.setJumincd(rs.getString(1)); //person.setGender(rs.getString("jumincd"));

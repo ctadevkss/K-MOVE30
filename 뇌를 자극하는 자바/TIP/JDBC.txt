@@ -1,0 +1,19 @@
+	1단계: DB 연결을 위한 커넥션 인터페이스
+	Connection conn = null;
+    
+    // 2단계: MySQL JDBC드라이버를 로드한다.
+    Class.forName("com.mysql.jdbc.Driver");
+    
+    // 3단계: 드라이버매니져 클래스는 getConnection메소드로 DB를 연결한다.
+    conn = DriverManager.getConnection(
+                                        "jdbc:mysql://localhost:3306/mysql", // 경로 
+                                        "root",   // 계정
+                                        "12345"); // 패스워드     
+    
+    
+    rs.next() -> 레코드가 있는지 확인.
+    
+    
+    
+    // 4단계: DB연결을 종료한다.
+    conn.close();
