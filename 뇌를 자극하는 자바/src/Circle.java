@@ -36,6 +36,8 @@ public class Circle {
 		Circle pizza = new Circle(10, "자바피자");
 		double pizza_area = pizza.getArea();
 		System.out.println(pizza.name + "의 면적은 " + pizza_area);
+		
+		System.out.println(pizza);
 /*		
 		Circle donut = new Circle(); // 매개변수 없는 생성자 호출
 		donut.radius = 2;

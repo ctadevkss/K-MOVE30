@@ -70,6 +70,7 @@ class JDBC_Person_ArrayList {
     		int age = 0;
         	// 2단계: JDBC드라이버를 로드한다.
             Class.forName("com.mysql.jdbc.Driver");
+    		    		
             // 3단계: 드라이버매니져 클래스는 getConnection메소드로 DB를 연결한다.
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "12345");
             System.out.println("데이터베이스에 접속했습니다.");
@@ -82,9 +83,9 @@ class JDBC_Person_ArrayList {
             System.out.println("주민번호         이름      성별    나이");
             
             while(rs.next()) {
-
-            	Person person = new Person();
             	
+            	Person person = new Person();
+            	          	            	
             	person.setJumincd(rs.getString(1)); //person.setGender(rs.getString("jumincd"));
              	person.setPname(rs.getString(2));   // person.setGender(rs.getString("pname"));
             	person.setGender(rs.getString(3));  // person.setGender(rs.getString("gender"));

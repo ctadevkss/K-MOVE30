@@ -4,6 +4,8 @@
    FirstJava.java
  */
 
+import java.lang.*;
+
 public class FirstJava {
 
 	public static void main(String[] args) {
