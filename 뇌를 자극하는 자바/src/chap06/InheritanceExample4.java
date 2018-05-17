@@ -1,9 +1,9 @@
 package chap06;
 
-class BonusPointAcount extends Account {
+class BonusPointAccount extends Account {
 	int bonusPoint;
 	
-	public BonusPointAcount(String accountNo, String ownerName, int balance, int bonusPoint) {
+	public BonusPointAccount(String accountNo, String ownerName, int balance, int bonusPoint) {
 		super(accountNo, ownerName, balance);
 		this.bonusPoint = bonusPoint;
 	}
@@ -20,7 +20,7 @@ public class InheritanceExample4 {
 
 	public static void main(String[] args) {
 		
-		BonusPointAcount obj = new BonusPointAcount("333-33-333333", "±è¹Ì¿µ", 0, 0);
+		BonusPointAccount obj = new BonusPointAccount("333-33-333333", "±è¹Ì¿µ", 0, 0);
 	    obj.deposit(1000000);
 		System.out.println("ÀÜ¾×:" + obj.balance);
 		System.out.println("´©ÀûÆ÷ÀÎÆ®:" + obj.bonusPoint);
