@@ -50,6 +50,8 @@ class USAChild extends Person {
 	
 }
 
+
+
 public class Inherit {
 
 	public static void main(String[] args) {
