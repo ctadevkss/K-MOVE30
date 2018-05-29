@@ -36,8 +36,10 @@ public class JDBC_Manager {
 	
 	// query - "select pname, age, gender from person"
 	public ResultSet SelectTable(String query) throws Exception{
+		System.out.println("query - " + query);
 		stmt = conn.createStatement();           
-		rs = stmt.executeQuery(query);
+		rs = stmt.executeQuery(query); // rs = stmt.executeQuery(select pname, age, gender from person);
+		
 		return rs;
 	}
 	// query - "delete from person where pname = 'ȫ�浿' ";
