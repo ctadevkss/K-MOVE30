@@ -4,5 +4,7 @@ JDBC 에러
    원인: SQL 문법오류
    
    
-   
+2. Unhandled exception type SQLException
+   원인 : 에러처리 
+   해결 : throws Exception() { }   
    

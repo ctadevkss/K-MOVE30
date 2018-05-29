@@ -37,20 +37,29 @@ public class SelectActionListener implements ActionListener {
         
 		try {
 			rs = jdbcManager.SelectTable(query);
-			
+			model.setNumRows(0);
 			while(rs.next()) {
+				
 				arr[0] = rs.getString("pname");
 				arr[1] = rs.getString("age");
 				
 				// 성별을 남/여 구분값으로 변경
-				arr[2] = rs.getString("gender");
+				arr[2] = rs.getString("gender").equals("m") ? "남": "여";
 				System.out.println(arr[0] + " " + arr[1] + " " + arr[2]);
-				model.addRow(arr); // 데이터를 테이블에 추
+				model.addRow(arr); // 데이터를 테이블에 추가
+				
 			}
 			
 		}catch (Exception ex) {
 			ex.getMessage();
 		}
+		
+		//int row = table.getSelectedRow();
+		//int col = table.getSelectedColumn();
+		//Object value = table.getValueAt(row, col);
+		Object value = table.getValueAt(0, 1);
+		System.out.println((String)value);
+
 		
 	}
 }

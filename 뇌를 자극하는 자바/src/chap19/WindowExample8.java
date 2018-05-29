@@ -19,6 +19,7 @@ import com.kosea.kmove30.JDBC_Manager;
 class WindowExample8 {
     public static void main(String[] args) {
     	
+    	// DB관리(연결, 조회, 삭제, 추가 클래스) 
     	JDBC_Manager jdbcManager = new JDBC_Manager();
     	
         JFrame frame = new JFrame("참가자 명단 프로그램");
@@ -56,7 +57,7 @@ class WindowExample8 {
         //selectBtn.addActionListener(null);
         selectBtn.addActionListener(new SelectActionListener(jdbcManager, table));
         button1.addActionListener(new AddActionListener(table, text1, text2, text3));
-        button2.addActionListener(new RemoveActionListener(table));
+        button2.addActionListener(new RemoveActionListener(jdbcManager, table));
         
 
         

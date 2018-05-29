@@ -40,6 +40,16 @@ public class JDBC_Manager {
 		rs = stmt.executeQuery(query);
 		return rs;
 	}
+	// query - "delete from person where pname = '홍길동' ";
+	public void deleteTable(String deleteName) throws Exception{
+		String query = "delete from person where pname = '" + deleteName + "'"; 
+		stmt = conn.createStatement();
+		int deleteCount = stmt.executeUpdate(query);
+		
+		if (deleteCount > 0)
+		System.out.println(deleteCount + "건이 삭제 되었습니다.");
+	}
+	
 	
 	// DB 연결해제
 	public void DBClose() throws Exception{
