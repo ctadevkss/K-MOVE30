@@ -14,6 +14,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import com.kosea.kmove30.JDBC_Manager;
+import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 
 
 class WindowExample8 {
@@ -23,7 +24,7 @@ class WindowExample8 {
     	JDBC_Manager jdbcManager = new JDBC_Manager();
     	
         JFrame frame = new JFrame("참가자 명단 프로그램");
-        frame.setPreferredSize(new Dimension(430, 200));
+        frame.setPreferredSize(new Dimension(500, 200));
         frame.setLocation(500, 400);
         
         Container contentPane = frame.getContentPane();
@@ -38,8 +39,9 @@ class WindowExample8 {
         JTextField text3 = new JTextField(2);
         
         JButton selectBtn = new JButton("조회");
-        JButton button1 = new JButton("추가");
-        JButton button2 = new JButton("삭제");
+        JButton button1   = new JButton("추가");
+        JButton updateBtn = new JButton("수정");
+        JButton button2   = new JButton("삭제");
         
         panel.add(new JLabel("이름"));
         panel.add(text1);
@@ -50,17 +52,18 @@ class WindowExample8 {
         
         panel.add(selectBtn);
         panel.add(button1);
+        panel.add(updateBtn);
         panel.add(button2);
         contentPane.add(panel, BorderLayout.SOUTH);
 
         // 조회버튼 이벤트리스너 등록
-        //selectBtn.addActionListener(null);
+        table.addMouseListener(new MyMouseListener(text1, text2, text3));
         selectBtn.addActionListener(new SelectActionListener(jdbcManager, table));
-        button1.addActionListener(new AddActionListener(table, text1, text2, text3));
+        button1.addActionListener(new AddActionListener(jdbcManager, table, text1, text2, text3));
+        updateBtn.addActionListener(new UpdateActionListener(jdbcManager, text1, text2));
         button2.addActionListener(new RemoveActionListener(jdbcManager, table));
         
-
-        
+              
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
@@ -71,17 +74,16 @@ class WindowExample8 {
         
         try {
         	
-        	jdbcManager.DBConnection("com.mysql.jdbc.Driver","jdbc:mysql://localhost:3306/mysql", "root", "12345");
+        	jdbcManager.DBConnection("com.mysql.jdbc.Driver","jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf8", "root", "12345");
         	System.out.println("데이터베이스에 접속했습니다.");
         	frame.setTitle("참가자 명단 프로그램 - DB접속 성공");
         	
         }catch (ClassNotFoundException cnfe) {
-                System.out.println("해당 클래스를 찾을 수 없습니다." + 
-                cnfe.getMessage());
+                System.out.println("해당 클래스를 찾을 수 없습니다." + cnfe.getMessage());
                 frame.setTitle("참가자 명단 프로그램 - DB접속 실패");
         
         }catch (Exception e) {
-			e.getMessage();
+			System.out.println(e.getMessage());
 			frame.setTitle("참가자 명단 프로그램 - DB접속 실패");
 		}
     }

@@ -17,3 +17,19 @@
     
     // 4단계: DB연결을 종료한다.
     conn.close();
+    
+    
+    select 문 -> executeQuery();
+    insert, update, delete 문 -> excuteUpdate();
+    
+    
+    숫자를 문자열로 변환  String strNum = valueOf();
+    
+    문자열을 숫자로 변환  int num = Integer.parInt("123"); 
+    
+    
+    
+    
+    
+    
+    

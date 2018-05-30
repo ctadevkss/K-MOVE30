@@ -38,7 +38,7 @@ public class RemoveActionListener implements ActionListener {
         	// DB 테이블 레코드(데이터) 삭제 
         	jdbcManager.deleteTable(deleteName);
         }catch (Exception ex) {
-			ex.getMessage();
+			System.out.println(ex.getMessage());
 		}
     }
 }
