@@ -17,6 +17,12 @@ public class SelectActionListener implements ActionListener {
 	JTable table;
 	JDBC_Manager jdbcManager;
 	ResultSet rs;
+	
+	public SelectActionListener() {
+		
+	}
+	
+	
 	// »ý¼ºÀÚ
 	public SelectActionListener(JDBC_Manager jdbcManager, JTable table) {
 		super();
@@ -32,9 +38,7 @@ public class SelectActionListener implements ActionListener {
 		
 		String query = "select pname, age, gender from person";
         String arr[] = new String[3];
-        //arr[0] = text1.getText();
-        //arr[1] = text2.getText();
-        //arr[2] = text3.getText();
+
         DefaultTableModel model = (DefaultTableModel) table.getModel();
         
 		try {

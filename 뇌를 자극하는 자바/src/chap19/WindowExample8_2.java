@@ -66,18 +66,15 @@ class WindowExample8_2 {
         table.addMouseListener(new MyMouseListener(text1, text2, genderCombox));
         selectBtn.addActionListener(new SelectActionListener(jdbcManager, table));
         button1.addActionListener(new AddActionListener(jdbcManager, table, text1, text2, genderCombox));
-        updateBtn.addActionListener(new UpdateActionListener(jdbcManager, text1, text2));
+        updateBtn.addActionListener(new UpdateActionListener(jdbcManager, table, text1, text2));
         button2.addActionListener(new RemoveActionListener(jdbcManager, table));
-        
-              
+                    
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         
         System.out.println("프로그램 시작");
-        
-        
-        
+
         try {
         	
         	jdbcManager.DBConnection("com.mysql.jdbc.Driver","jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf8", "root", "12345");
