@@ -1,3 +1,16 @@
+XML문서    - jdbc:mysql://localhost:3306/mysql?useUnicode=true&amp;characterEncoding=utf8"
+properties - jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf8"
+& -> &amp;
+
+특수 문자	엔티티 표시
+<			&lt;
+>			&gt;
+&			&amp;
+"			&quot;
+
+
+
+
 	1단계: DB 연결을 위한 커넥션 인터페이스
 	Connection conn = null;
     
