@@ -1,6 +1,9 @@
 package com.kosea.kmove30;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -18,14 +21,24 @@ public class MybatisTest {
 			SqlSession session = sqlSessionFactory.openSession();
 			
 			try {
-	
+				///// 전체 조회 //////
+				List<Member> memberList = new ArrayList<Member>(); 
+				memberList = session.selectList("org.mybatis.example.MemberMapper.selectAllMember");
+				
+				for(Member member : memberList) {
+					String logMessage = member.getId().toString() + " " + 
+				                        member.getPass().toString() + " " +
+				                        member.getMno();
+					//System.out.println(member.getId() + " " + member.getPass() + " " + member.getMno());
+					member.printLog(logMessage);
+				}
+						
 				///// 조회 시작 //////
 				// Member member = new Member();
-				 Member member = (Member)session.selectOne("org.mybatis.example.SelectMapper.selectMember", 101);
-	
-				System.out.println("회원 번호: "     + member.getMno());
-				System.out.println("회원 아이디: "   + member.getId());
-				System.out.println("회원 비밀번호: " + member.getPass());
+				// Member member = (Member)session.selectOne("org.mybatis.example.MemberMapper.selectMember", 101);
+				// member.printLog("아이디:" + member.getId() + 
+				//		 		 "  패스:" + member.getPass() + 
+				//		 		 "  mno: " + member.getMno()); 
 				///// 조회 종료 //////
 
 				
