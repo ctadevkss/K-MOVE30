@@ -13,9 +13,8 @@ public class MainProcess {
     public void showFrameTest(){
     	System.out.println("MainProcess.showFrameTest();");
     	
-        loginView.dispose(); // 로그인창닫기
-        
-        this.testFrm = new TestFrm(); // 테스트프레임 오픈
+        loginView.dispose();   // 로그인창닫기
+        new WindowExample8_2();
     }	
 	
 	public static void main(String[] args) {

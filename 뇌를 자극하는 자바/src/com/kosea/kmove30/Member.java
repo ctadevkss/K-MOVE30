@@ -10,7 +10,6 @@ public class Member {
 	int mno;
 	String id;
 	String pass;
-
 	
 	public Member() {}
 		
