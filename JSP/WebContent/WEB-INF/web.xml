@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>JSP</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>hundred-servlet</servlet-name>
+  	<servlet-class>HundredServlet</servlet-class>	
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>hundred-servlet</servlet-name>
+  	<url-pattern>/hundred</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>xxx</servlet-name>
+  	<servlet-class>AdderServlet</servlet-class>	
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>xxx</servlet-name>
+  	<url-pattern>/adder</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>yyy</servlet-name>
+  	<servlet-class>BBSPostServlet</servlet-class>	
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>yyy</servlet-name>
+  	<url-pattern>/bbs-post</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+  	<servlet-name>zzz</servlet-name>
+  	<servlet-class>PersonalInfoServlet</servlet-class>	
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>zzz</servlet-name>
+  	<url-pattern>/pinfo-result</url-pattern>
+  </servlet-mapping>  
+  
+  
+  <servlet>
+  	<servlet-name>AAA</servlet-name>
+  	<servlet-class>PibonachiServlet</servlet-class>	
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>AAA</servlet-name>
+  	<url-pattern>/pibonachi</url-pattern>
+  </servlet-mapping>  
+  
+  
+  
+  
+  
+</web-app>
