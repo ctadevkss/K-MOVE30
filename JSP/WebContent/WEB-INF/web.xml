@@ -62,7 +62,15 @@
   	<url-pattern>/pibonachi</url-pattern>
   </servlet-mapping>  
   
+  <servlet>
+  	<servlet-name>BBB</servlet-name>
+  	<servlet-class>WinnersServlet</servlet-class>	
+  </servlet>
   
+  <servlet-mapping>
+    <servlet-name>BBB</servlet-name>
+  	<url-pattern>/jstl</url-pattern>
+  </servlet-mapping>   
   
   
   
