@@ -18,16 +18,22 @@
     <![endif]-->
     
     <link href="floating-labels.css" rel="stylesheet">
+    <style id="__web-inspector-hide-shortcut-style__" type="text/css">
+.__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *, .__web-inspector-hidebefore-shortcut__::before, .__web-inspector-hideafter-shortcut__::after
+{
+    visibility: hidden !important;
+}
+</style>
   </head>
   <body>
      
 	<form class="form-signin" action="/JSP/Hi.jsp" method="get">
       <div class="text-center mb-4">
-        <h1 class="h3 mb-3 font-weight-normal">이름을 입력하세요.</h1>      
+        <h1 class="h3 mb-3 font-weight-normal">이름을 입력하세요...</h1>      
       </div>
 
       <div class="form-label-group">
-        <input type="text" id="inputName" class="form-control" placeholder="InputYourName" required="" autofocus="">
+        <input type="text" name="NAME" id="inputName" class="form-control" placeholder="InputYourName" required="" autofocus="">
       </div>
       
       <div>
