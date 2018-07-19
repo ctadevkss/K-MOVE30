@@ -16,6 +16,11 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <!-- 카카오톡 로그인 -->
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    
+    
   </head>
   <body>
      
@@ -24,7 +29,7 @@
     <div class="container">
 
       <form class="form-signin" action="/JSP/chap04/Agreement.jsp"  method="post">
-        <h2 class="form-signin-heading">개인정보를 입력하십시오.</h2>
+        <h2 class="form-signin-heading">카카오톡 계정 연동 </h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="text" name="ID" id=""  class="form-control" placeholder="ID" required="" autofocus="">
         <label for="inputPassword"  class="sr-only">Password</label>
@@ -36,6 +41,9 @@
           </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">확 인</button>
+        
+        <a id="kakao-login-btn" ></a>
+		<a href="http://developers.kakao.com/logout"></a>
       </form>
 
     </div> <!-- /container -->
@@ -43,15 +51,33 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  
-
-
-     
-     
-  
     <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
     <script src="../bootstrap/js/bootstrap.min.js"></script>
+    
+    
+    
+    
+
+<script type='text/javascript'>
+  //<![CDATA[
+    // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('1d6254039aa29c74fbf32be10bbeb292');
+    // 카카오 로그인 버튼을 생성합니다.
+    Kakao.Auth.createLoginButton({
+      container: '#kakao-login-btn',
+      success: function(authObj) {
+        //alert(JSON.stringify(authObj));
+        alert("로그인 되었습니다.");
+        location.href = "Agreement.jsp";
+      },
+      fail: function(err) {
+         alert(JSON.stringify(err));
+      }
+    });
+  //]]>
+</script>
+    
   </body>
 </html>

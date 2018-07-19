@@ -10,11 +10,27 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+  <error-page>
+  	<exception-type>java.lang.NumberFormatException</exception-type>
+  	<location>/WEB-INF/error/NumberFormatError.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<exception-type>java.lang.ArithmeticException</exception-type>
+  	<location>/WEB-INF/error/ArithmeticException.jsp</location>
+  </error-page>	
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/WEB-INF/error/NotFoundError.jsp</location>
+  </error-page>	  
+  
+  
+
   <servlet>
   	<servlet-name>hundred-servlet</servlet-name>
   	<servlet-class>HundredServlet</servlet-class>	
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>hundred-servlet</servlet-name>
   	<url-pattern>/hundred</url-pattern>
@@ -24,7 +40,6 @@
   	<servlet-name>xxx</servlet-name>
   	<servlet-class>AdderServlet</servlet-class>	
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>xxx</servlet-name>
   	<url-pattern>/adder</url-pattern>
@@ -34,18 +49,15 @@
   	<servlet-name>yyy</servlet-name>
   	<servlet-class>BBSPostServlet</servlet-class>	
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>yyy</servlet-name>
   	<url-pattern>/bbs-post</url-pattern>
   </servlet-mapping>
 
-
   <servlet>
   	<servlet-name>zzz</servlet-name>
   	<servlet-class>PersonalInfoServlet</servlet-class>	
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>zzz</servlet-name>
   	<url-pattern>/pinfo-result</url-pattern>
@@ -56,7 +68,6 @@
   	<servlet-name>AAA</servlet-name>
   	<servlet-class>PibonachiServlet</servlet-class>	
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>AAA</servlet-name>
   	<url-pattern>/pibonachi</url-pattern>
@@ -66,10 +77,51 @@
   	<servlet-name>BBB</servlet-name>
   	<servlet-class>WinnersServlet</servlet-class>	
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>BBB</servlet-name>
   	<url-pattern>/jstl</url-pattern>
+  </servlet-mapping>   
+  
+  
+  <servlet>
+  	<servlet-name>animalServlet</servlet-name>
+  	<servlet-class>AnimalServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>animalServlet</servlet-name>
+  	<url-pattern>/animal</url-pattern>
+  </servlet-mapping>  
+
+
+  <servlet>
+  	<servlet-name>resultServlet</servlet-name>
+  	<servlet-class>ResultServlet</servlet-class>	
+  </servlet>  
+  <servlet-mapping>
+    <servlet-name>resultServlet</servlet-name>
+  	<url-pattern>/result</url-pattern>
+  </servlet-mapping> 
+
+  
+  
+  <servlet>
+  	<servlet-name>ex</servlet-name>
+  	<servlet-class>chap05.DividerServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex</servlet-name>
+  	<url-pattern>/divider</url-pattern>
+  </servlet-mapping>  
+  
+  
+  
+  <servlet>
+  	<servlet-name>ex6-3</servlet-name>
+  	<servlet-class>chap06.GreetingServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex6-3</servlet-name>
+  	<url-pattern>/greeting</url-pattern>
   </servlet-mapping>   
   
   
