@@ -10,6 +10,13 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+  <context-param>
+  	<description>DB 네임 초기화 파라미터</description>
+  	<param-name>DB_NAME</param-name>
+  	<param-value>bankdb</param-value>
+  </context-param>
+  
+  
   <error-page>
   	<exception-type>java.lang.NumberFormatException</exception-type>
   	<location>/WEB-INF/error/NumberFormatError.jsp</location>
@@ -117,13 +124,52 @@
   
   <servlet>
   	<servlet-name>ex6-3</servlet-name>
-  	<servlet-class>chap06.GreetingServlet</servlet-class>	
+  	<servlet-class>chap06.GreetingServlet</servlet-class>
+  	<init-param>
+  		<param-name>FILE_NAME</param-name>
+  		<param-value>C:\\data\\log2.txt</param-value>
+  	</init-param>	
   </servlet>
   <servlet-mapping>
     <servlet-name>ex6-3</servlet-name>
   	<url-pattern>/greeting</url-pattern>
   </servlet-mapping>   
   
+  
+  <servlet>
+  	<servlet-name>ex6-302page</servlet-name>
+  	<jsp-file>/Menu.jsp</jsp-file>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex6-302page</servlet-name>
+  	<url-pattern>/Menu</url-pattern>
+  </servlet-mapping>  
+    
+  
+  <servlet>
+  	<servlet-name>ex6-304page</servlet-name>
+  	<jsp-file>/chap06/DBName.jsp</jsp-file>
+  	<init-param>
+  		<param-name>DB_NAME</param-name>
+  		<param-value>malldb</param-value>
+  	</init-param>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex6-304page</servlet-name>
+  	<url-pattern>/chap06/DBName</url-pattern>
+  </servlet-mapping>   
+  
+  
+   <servlet>
+  	<servlet-name>ex6-308</servlet-name>
+  	<servlet-class>chap06.ServerInfoServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex6-308</servlet-name>
+  	<url-pattern>/server-info</url-pattern>
+  </servlet-mapping>   
+  
+   
   
   
 </web-app>

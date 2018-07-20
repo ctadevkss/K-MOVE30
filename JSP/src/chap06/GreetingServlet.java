@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.GregorianCalendar;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,12 +14,19 @@ import javax.servlet.http.HttpServletResponse;
 public class GreetingServlet extends HttpServlet {
 	
 	private PrintWriter logFile;
-
+	
 	@Override
 	public void init() throws ServletException {
 		
+		//String fileName = getInitParameter("FILE_NAME");
+		
+		ServletContext context = getServletContext();	
+		String newFileName = context.getRealPath("/WEB-INF/logs/log.txt");
+		
 		try {
-			logFile = new PrintWriter(new FileWriter("C:\\data\\log.txt", true));
+			logFile = new PrintWriter(new FileWriter(newFileName, true));
+			//logFile = new PrintWriter(new FileWriter("C:\\data\\log.txt", true));
+			System.out.println("fileName 경로: " + newFileName);
 		}
 		catch (Exception e) {
 			throw new ServletException(e);
