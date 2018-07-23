@@ -1,0 +1,9 @@
+1번.   
+    JSP 내장객체 : request
+        메소드   : getParameter(String args);
+
+
+2번. 
+	JSP 내장객체 : out
+        메소드   : print(String args), printf(String args);
+

@@ -1,0 +1,13 @@
+1번 <%@ page contentType="text/html; charset=euc-kr" %>
+     또는 UTF-8 로 처리하려면 
+    <%@ page contentType="text/html; charset=UTF-8"%>
+
+
+2번 <%@ include file="telephone.jsp"%>
+
+3번 
+<%
+	String dept_name = "컴퓨터정보계열";
+	String grade[] = {"A+", "A", "B+", "B", "C+", "C", "D+", "D", "F"};
+	int cLass = 3;
+%>
