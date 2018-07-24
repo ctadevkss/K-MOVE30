@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>2018. 7. 24.</title>
+   
+
+<script type="text/javascript">
+
+function btn_click(){
+	
+	var section1s = document.getElementsByClassName("myClass");
+	var str = "";
+	for(var i=0; i<section1s.length; i++) {
+		
+		console.log(section1s[i].value);
+		str = section1s[i].value;
+		alert(str);
+	}
+}
+</script>   
+   
+  </head>
+  <body>
+     <input type="text" class="myClass" > <br/>
+     <input type="text" class="myClass" > <br/>
+     <input type="text" class="myClass" > <br/>
+	 <input type="button" value="입력값 확인하기" onclick="btn_click();">
+  </body>
+</html>
+
+
+
