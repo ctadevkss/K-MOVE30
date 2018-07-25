@@ -13,7 +13,13 @@
   <context-param>
   	<description>DB 네임 초기화 파라미터</description>
   	<param-name>DB_NAME</param-name>
-  	<param-value>bankdb</param-value>
+  	<param-value>malldb</param-value>
+  </context-param>
+  
+  <context-param>
+  <description>JSP 개발툴</description>	
+  	<param-name>TOOL_NAME</param-name>
+  	<param-value>Eclipse</param-value>
   </context-param>
   
   
@@ -169,7 +175,11 @@
   	<url-pattern>/server-info</url-pattern>
   </servlet-mapping>   
   
-   
-  
+ <jsp-config>
+  <taglib>
+  	<taglib-uri>http://localhost:8080/JSP/chap07/math-functions.tld</taglib-uri>
+  	<taglib-location>/WEB-INF/math-functions.tld</taglib-location>
+  </taglib>
+  </jsp-config>
   
 </web-app>
