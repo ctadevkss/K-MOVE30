@@ -38,8 +38,6 @@
   	<location>/WEB-INF/error/NotFoundError.jsp</location>
   </error-page>	  
   
-  
-
   <servlet>
   	<servlet-name>hundred-servlet</servlet-name>
   	<servlet-class>HundredServlet</servlet-class>	
@@ -164,15 +162,24 @@
     <servlet-name>ex6-304page</servlet-name>
   	<url-pattern>/chap06/DBName</url-pattern>
   </servlet-mapping>   
-  
-  
-   <servlet>
+    
+  <servlet>
   	<servlet-name>ex6-308</servlet-name>
   	<servlet-class>chap06.ServerInfoServlet</servlet-class>	
   </servlet>
   <servlet-mapping>
     <servlet-name>ex6-308</servlet-name>
   	<url-pattern>/server-info</url-pattern>
+  </servlet-mapping>   
+  
+  
+  <servlet>
+  	<servlet-name>ex8-391</servlet-name>
+  	<servlet-class>chap08.PersonalInfoServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex8-391</servlet-name>
+  	<url-pattern>/pinfo</url-pattern>
   </servlet-mapping>   
   
  <jsp-config>
