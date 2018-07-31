@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
 
 <%
-	String gcode =request.getParameter("gcode");
+	String gcode =request.getParameter("gcode");  // 파라미터로 gcode값 받는 곳
 	Connection conn = null;
 	Statement stmt = null;
 	
@@ -17,7 +17,6 @@
 		String url = "jdbc:mysql://localhost:3306/webdb";
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(url, "root", "123456789");
-		
 		stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery("select * from goodsinfo where gcode = '" + gcode + "'" );
 		
