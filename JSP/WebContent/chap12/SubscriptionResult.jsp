@@ -13,10 +13,9 @@
 
 function goto_userInfoAllView() 
 {
-	location.href="userInfoAllView.jsp";
+	location.href="userInfoAllView.jsp";  // 페이지를 이동
 }
 </script>
-
 </head>
 <body>
 	<h3>회원 가입 결과</h3>
