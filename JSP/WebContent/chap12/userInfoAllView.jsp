@@ -8,19 +8,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>windows7K</title>
-
-<script type="text/javascript">
-
-function goto_userInfoAllView() 
-{
-	location.href="userInfoAllView.jsp";
-}
-</script>
-
 </head>
 <body>
-	<h3>회원 가입 결과</h3>
-		가입되었습니다. 
-	<input type="button" value="전체회원 보기"  onclick="javascript:goto_userInfoAllView();"/>
+<h2> 전체 회원 보기</h2>
 </body>
 </html>
