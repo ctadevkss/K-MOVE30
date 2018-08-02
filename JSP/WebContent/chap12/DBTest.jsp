@@ -14,6 +14,7 @@
 <title>windows7K</title>
 </head>
 <body>
+
 	<h2>데이터 베이스 연결 테스트</h2>
 	<%
 		String url = "jdbc:mysql://localhost:3306/webdb";
