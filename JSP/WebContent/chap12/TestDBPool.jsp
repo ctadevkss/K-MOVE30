@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" errorPage="DBError.jsp"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
 
 <%@ page import="java.sql.*" %>
@@ -16,7 +16,8 @@
 	<%
 		Class.forName("org.apache.commons.dbcp.PoolingDriver");
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:/webdb_pool");
+		//Connection conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:/webdb_pool");
+		Connection conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:/wdbpool");
 		
 		if(conn!=null) {
 			out.print("연결취득완료 <br/>");

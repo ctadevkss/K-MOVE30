@@ -37,7 +37,13 @@
   	<error-code>404</error-code>
   	<location>/WEB-INF/error/NotFoundError.jsp</location>
   </error-page>	  
-  
+ 
+  <servlet>
+    <servlet-name>auto-create-db-pool-jsp</servlet-name>
+    <jsp-file>/AutoCreateDBPool.jsp</jsp-file>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
   <servlet>
   	<servlet-name>hundred-servlet</servlet-name>
   	<servlet-class>HundredServlet</servlet-class>	
