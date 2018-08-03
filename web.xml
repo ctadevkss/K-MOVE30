@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>JSP</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+  	<description>DB 네임 초기화 파라미터</description>
+  	<param-name>DB_NAME</param-name>
+  	<param-value>malldb</param-value>
+  </context-param>
+  
+  <context-param>
+  <description>JSP 개발툴</description>	
+  	<param-name>TOOL_NAME</param-name>
+  	<param-value>Eclipse</param-value>
+  </context-param>
+  
+  
+  <error-page>
+  	<exception-type>java.lang.NumberFormatException</exception-type>
+  	<location>/WEB-INF/error/NumberFormatError.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<exception-type>java.lang.ArithmeticException</exception-type>
+  	<location>/WEB-INF/error/ArithmeticException.jsp</location>
+  </error-page>	
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/WEB-INF/error/NotFoundError.jsp</location>
+  </error-page>	  
+ 
+  <servlet>
+    <servlet-name>auto-create-db-pool-jsp</servlet-name>
+    <jsp-file>/AutoCreateDBPool.jsp</jsp-file>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet>
+  	<servlet-name>hundred-servlet</servlet-name>
+  	<servlet-class>HundredServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hundred-servlet</servlet-name>
+  	<url-pattern>/hundred</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>xxx</servlet-name>
+  	<servlet-class>AdderServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>xxx</servlet-name>
+  	<url-pattern>/adder</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>yyy</servlet-name>
+  	<servlet-class>BBSPostServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>yyy</servlet-name>
+  	<url-pattern>/bbs-post</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  	<servlet-name>zzz</servlet-name>
+  	<servlet-class>PersonalInfoServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>zzz</servlet-name>
+  	<url-pattern>/pinfo-result</url-pattern>
+  </servlet-mapping>  
+  
+  
+  <servlet>
+  	<servlet-name>AAA</servlet-name>
+  	<servlet-class>PibonachiServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AAA</servlet-name>
+  	<url-pattern>/pibonachi</url-pattern>
+  </servlet-mapping>  
+  
+  <servlet>
+  	<servlet-name>BBB</servlet-name>
+  	<servlet-class>WinnersServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BBB</servlet-name>
+  	<url-pattern>/jstl</url-pattern>
+  </servlet-mapping>   
+  
+  
+  <servlet>
+  	<servlet-name>animalServlet</servlet-name>
+  	<servlet-class>AnimalServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>animalServlet</servlet-name>
+  	<url-pattern>/animal</url-pattern>
+  </servlet-mapping>  
+
+
+  <servlet>
+  	<servlet-name>resultServlet</servlet-name>
+  	<servlet-class>ResultServlet</servlet-class>	
+  </servlet>  
+  <servlet-mapping>
+    <servlet-name>resultServlet</servlet-name>
+  	<url-pattern>/result</url-pattern>
+  </servlet-mapping> 
+
+  
+  
+  <servlet>
+  	<servlet-name>ex</servlet-name>
+  	<servlet-class>chap05.DividerServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex</servlet-name>
+  	<url-pattern>/divider</url-pattern>
+  </servlet-mapping>  
+  
+  
+  
+  <servlet>
+  	<servlet-name>ex6-3</servlet-name>
+  	<servlet-class>chap06.GreetingServlet</servlet-class>
+  	<init-param>
+  		<param-name>FILE_NAME</param-name>
+  		<param-value>C:\\data\\log2.txt</param-value>
+  	</init-param>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex6-3</servlet-name>
+  	<url-pattern>/greeting</url-pattern>
+  </servlet-mapping>   
+  
+  
+  <servlet>
+  	<servlet-name>ex6-302page</servlet-name>
+  	<jsp-file>/Menu.jsp</jsp-file>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex6-302page</servlet-name>
+  	<url-pattern>/Menu</url-pattern>
+  </servlet-mapping>  
+    
+  
+  <servlet>
+  	<servlet-name>ex6-304page</servlet-name>
+  	<jsp-file>/chap06/DBName.jsp</jsp-file>
+  	<init-param>
+  		<param-name>DB_NAME</param-name>
+  		<param-value>malldb</param-value>
+  	</init-param>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex6-304page</servlet-name>
+  	<url-pattern>/chap06/DBName</url-pattern>
+  </servlet-mapping>   
+    
+  <servlet>
+  	<servlet-name>ex6-308</servlet-name>
+  	<servlet-class>chap06.ServerInfoServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex6-308</servlet-name>
+  	<url-pattern>/server-info</url-pattern>
+  </servlet-mapping>   
+  
+  
+  <servlet>
+  	<servlet-name>ex8-391</servlet-name>
+  	<servlet-class>chap08.PersonalInfoServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex8-391</servlet-name>
+  	<url-pattern>/pinfo</url-pattern>
+  </servlet-mapping>   
+  
+ <jsp-config>
+  <taglib>
+  	<taglib-uri>http://localhost:8080/JSP/chap07/math-functions.tld</taglib-uri>
+  	<taglib-location>/WEB-INF/math-functions.tld</taglib-location>
+  </taglib>
+  </jsp-config>
+  
+</web-app>

@@ -1,0 +1,13 @@
+<object class="org.apache.commons.dbcp.PoolableConnectionFactory"
+        xmlns="http://apache.org/xml/xmlns/jakarta/commons/jocl">
+    <object class="org.apache.commons.dbcp.DriverManagerConnectionFactory"> 
+        <string value="jdbc:mysql://localhost:3306/webdb" />
+        <string value="root" />
+        <string value="123456789" />
+    </object>
+    <object class="org.apache.commons.pool.impl.GenericObjectPool" />
+    <object class="org.apache.commons.pool.impl.GenericKeyedObjectPoolFactory" null="true" />
+    <string null="true" />
+    <boolean value="false" />
+    <boolean value="true" /> 
+</object>
