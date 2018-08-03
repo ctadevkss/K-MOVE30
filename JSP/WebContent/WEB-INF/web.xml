@@ -188,6 +188,45 @@
   	<url-pattern>/pinfo</url-pattern>
   </servlet-mapping>   
   
+  
+  <servlet>
+  	<servlet-name>ex13-740</servlet-name>
+  	<servlet-class>chap13.BBSListServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex13-740</servlet-name>
+  	<url-pattern>/bbs-list</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ex13-765</servlet-name>
+  	<servlet-class>chap13.BooksListServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex13-765</servlet-name>
+  	<url-pattern>/books-info</url-pattern>
+  </servlet-mapping>  
+     
+  
+  <servlet>
+  	<servlet-name>ex13-758</servlet-name>
+  	<servlet-class>chap13.LoginSevlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex13-758</servlet-name>
+  	<url-pattern>/login</url-pattern>
+  </servlet-mapping>   
+
+  <servlet>
+  	<servlet-name>ex13-761</servlet-name>
+  	<servlet-class>chap13.LogoutServlet</servlet-class>	
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ex13-761</servlet-name>
+  	<url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+
+  
  <jsp-config>
   <taglib>
   	<taglib-uri>http://localhost:8080/JSP/chap07/math-functions.tld</taglib-uri>
